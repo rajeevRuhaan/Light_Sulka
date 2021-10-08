@@ -4,7 +4,8 @@ A Full-Stack Ecommerce application that uss React, Redux, MongoDB, Nodejs, Expre
 
 <hr>
 
-[![github-follow](https://img.shields.io/github/followers/imbingz?label=Follow&logoColor=purple&style=social)](https://github.com/dariwwka)(https://github.com/rajeevRuhaan)
+[![github-follow](https://img.shields.io/github/followers/imbingz?label=Follow&logoColor=purple&style=social)](https://github.com/dariwwka)
+[![github-follow](https://img.shields.io/github/followers/imbingz?label=Follow&logoColor=purple&style=social)](https://github.com/rajeevRuhaan)
 [![project-languages-used](https://img.shields.io/github/languages/count/imbingz/MERN-stack-ecommerce)](https://github.com/Dariwka/Light_Sulka)
 [![project-top-language](https://img.shields.io/github/languages/top/imbingz/MERN-stack-ecommerce?color=blueviolet)](https://github.com/Dariwka/Light_Sulka)
 [![license](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://choosealicense.com/licenses/mit/)
