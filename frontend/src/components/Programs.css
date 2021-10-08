@@ -1,0 +1,17 @@
+.programs_section {
+  background-color: green;
+  padding: 3rem 1rem 15rem;
+}
+
+.card_body {
+  background-color: honeydew;
+}
+.nav-tabs {
+  background-color: lightgreen;
+}
+.nav-item:hover {
+  background-color: orangered;
+}
+
+.nav-link {
+}
