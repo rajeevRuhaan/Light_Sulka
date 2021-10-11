@@ -16,6 +16,8 @@ import BRMcalculator from "./screens/BRMcalculator";
 
 import CartScreen from "./screens/CartScreen";
 import SigninScreen from "./screens/SigninScreen";
+import Delivery from "./screens/Delivery";
+import Payments from "./screens/Payments";
 
 function App() {
   const [sideToggle, setSideToggle] = useState(false);
@@ -33,6 +35,8 @@ function App() {
           <Route exact path="/calculator" component={BRMcalculator} />
           <Route exact path="/signin" component={SigninScreen} />
           <Route exact path="/cart" component={CartScreen} />
+          <Route exact path="/delivery" component={Delivery} />
+          <Route exact path="/payments" component={Payments} />
         </Switch>
       </main>
       <Footer />
