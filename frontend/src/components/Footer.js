@@ -43,7 +43,7 @@ const Footer = () => {
         </Row>
       </Container>
       <div className="footer_bottom">
-        <p>Copyrights © Diana Korotkevica 2021</p>
+        <p>Copyrights © Light Sulka 2021</p>
       </div>
     </div>
   );

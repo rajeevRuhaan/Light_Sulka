@@ -1,7 +1,11 @@
-import "./Programs.css";
 import React, { useEffect } from "react";
 import Program from "./Program";
 import { useDispatch, useSelector } from "react-redux";
+import Col from "react-bootstrap/Col";
+
+//Components
+import LoadingBox from "../components/LoadingBox";
+import MessageBox from "../components/MessageBox";
 
 //Actions
 import { getProducts as listProducts } from "../redux/actions/productActions";
@@ -17,27 +21,27 @@ const Programs = () => {
   }, [dispatch]);
 
   return (
-    <div className="programs_section">
-      <h2 className="programs__title">Latest Products</h2>
-      <div className="program__products">
-        {loading ? (
-          <h2>Loading...</h2>
-        ) : error ? (
-          <h2>{error}</h2>
-        ) : (
-          products.map((product) => (
+    <>
+      {loading ? (
+        <LoadingBox />
+      ) : error ? (
+        <MessageBox variant="danger"> {error} </MessageBox>
+      ) : (
+        products.map((product) => (
+          <Col>
             <Program
               key={product._id}
               name={product.name}
-              description={product.description}
-              price={product.price}
+              calories={product.calories}
+              additionalInfo={product.additionalInfo}
+              cpfc={product.cpfc}
               imageUrl={product.imageUrl}
               productId={product._id}
             />
-          ))
-        )}
-      </div>
-    </div>
+          </Col>
+        ))
+      )}
+    </>
   );
 };
 

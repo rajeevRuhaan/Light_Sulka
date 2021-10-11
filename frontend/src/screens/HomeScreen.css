@@ -1,14 +1,18 @@
 .homescreen {
   max-width: 100%;
   background: #47c15a;
-  padding: 3rem 1rem 15rem;
+  padding: 2rem 1rem 15rem;
 }
 
 .homescreen__title {
+  text-align: center;
   font-size: 1.5rem;
   color: white;
   margin-bottom: 1rem;
   margin-left: 8px;
+}
+.programs_row {
+  padding: 1rem;
 }
 
 .homescreen__products {

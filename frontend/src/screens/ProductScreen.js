@@ -6,12 +6,24 @@ import { useSelector, useDispatch } from "react-redux";
 import { getProductDetails } from "../redux/actions/productActions";
 import { addToCart } from "../redux/actions/cartActions";
 
+//Components
+import LoadingBox from "../components/LoadingBox";
+import MessageBox from "../components/MessageBox";
+
 const ProductScreen = ({ match, history }) => {
   const [qty, setQty] = useState(1);
+  const [selectedData, setSelectedData] = useState(0);
+
+  const getData = (e) => {
+    setSelectedData(e.target.value);
+
+    console.log(e.target.value);
+  };
 
   const dispatch = useDispatch();
 
   const productDetails = useSelector((state) => state.getProductDetails);
+
   const { loading, error, product } = productDetails;
 
   useEffect(() => {
@@ -28,9 +40,9 @@ const ProductScreen = ({ match, history }) => {
   return (
     <div className="productscreen">
       {loading ? (
-        <h2>Loading...</h2>
+        <LoadingBox />
       ) : error ? (
-        <h2>{error}</h2>
+        <MessageBox variant="danger"> {error} </MessageBox>
       ) : (
         <>
           <div className="productscreen__left">
@@ -38,16 +50,35 @@ const ProductScreen = ({ match, history }) => {
               <img src={product.imageUrl} alt={product.name} />
             </div>
             <div className="left__info">
-              <p className="left__name">{product.name}</p>
+              <p className="left__name">
+                {product.name}
+                {product.calories}
+              </p>
               <p>Price: ${product.price}</p>
               <p>Description: {product.description}</p>
             </div>
           </div>
           <div className="productscreen__right">
             <div className="right__info">
+              <div className="button_section">
+                {product.prices &&
+                  product.prices.map((item) => (
+                    <button
+                      className="button_prices"
+                      key={item.id}
+                      value={[item]}
+                      onClick={getData}
+                    >
+                      <div className="price_perday">
+                        <i class="fas fa-euro-sign">{item.price}</i>/ per day
+                      </div>
+                      <strong>{item.days}days</strong>
+                    </button>
+                  ))}
+              </div>
               <p>
-                Price:
-                <span>${product.price}</span>
+                Total: {selectedData}
+                <i class="fas fa-euro-sign"></i>
               </p>
               <p>
                 Qty

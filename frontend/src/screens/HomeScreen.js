@@ -1,6 +1,7 @@
 import "./HomeScreen.css";
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
 
 // Components
 import Programs from "../components/Programs";
@@ -14,9 +15,11 @@ const HomeScreen = () => {
       <InfoSection />
       <div className="homescreen">
         <h2 className="homescreen__title">Choose your program</h2>
-        <div className="homescreen__products">
-          <Programs />
-        </div>
+        <Container className="programs_row">
+          <Row>
+            <Programs />
+          </Row>
+        </Container>
       </div>
     </>
   );

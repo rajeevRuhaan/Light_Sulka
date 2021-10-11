@@ -1,6 +1,10 @@
 .programs_section {
-  background-color: green;
   padding: 3rem 1rem 15rem;
+}
+
+.program__products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .card_body {
@@ -11,7 +15,4 @@
 }
 .nav-item:hover {
   background-color: orangered;
-}
-
-.nav-link {
 }

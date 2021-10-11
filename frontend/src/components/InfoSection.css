@@ -1,7 +1,7 @@
 .section {
   background: #b2efb8;
   width: 100%;
-  padding: 2rem;
+  padding: 1rem;
 }
 
 .info {
@@ -18,6 +18,11 @@
 .info_item_icon {
   font-size: 3rem;
   text-align: center;
+}
+
+.info_item_text {
+  align-items: center;
+  padding: 0 20%;
 }
 
 .info_item_text p {

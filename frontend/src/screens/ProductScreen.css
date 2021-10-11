@@ -42,11 +42,41 @@
   flex: 0.2;
 }
 
+/**right info table**/
+
 .right__info {
-  width: 250px;
+  width: 300px;
   margin: 1rem;
-  background: #fff;
+  background: #b2efb8;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+.button_section {
+  text-align: center;
+  padding-top: 0.5rem;
+}
+
+.button_prices {
+  width: 130px;
+  background-color: white;
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  transition-duration: 0.4s;
+}
+
+.button_prices:hover {
+  background-color: orangered;
+  color: white;
+  border: orangered;
+}
+
+.button_prices:hover .price_perday {
+  color: white;
+}
+
+.price_perday {
+  color: orangered;
+  font-size: 1rem;
 }
 
 .right__info p {
@@ -60,9 +90,9 @@
   grid-column: 1/-1;
   width: 100%;
   padding: 10px 16px;
-  background: #171717;
+  background: orangered;
   color: #f4f4f4;
-  border: 1px solid #171717;
+  border: 1px solid orangered;
   cursor: pointer;
   border-radius: 5px;
 }
