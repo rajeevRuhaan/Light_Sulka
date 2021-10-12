@@ -31,12 +31,12 @@ const Programs = () => {
           <Col>
             <Program
               key={product._id}
+              productId={product._id}
               name={product.name}
               calories={product.calories}
               additionalInfo={product.additionalInfo}
               cpfc={product.cpfc}
               imageUrl={product.imageUrl}
-              productId={product._id}
             />
           </Col>
         ))

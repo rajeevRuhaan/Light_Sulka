@@ -17,6 +17,7 @@ const products = [
       { id: 5, days: 24, price: 20 },
       { id: 6, days: 30, price: 15 },
     ],
+    countInStock: 5,
   },
   {
     id: 2,
@@ -36,6 +37,7 @@ const products = [
       { id: 5, days: 24, price: 35 },
       { id: 6, days: 30, price: 30 },
     ],
+    countInStock: 5,
   },
   {
     id: 3,
@@ -55,6 +57,7 @@ const products = [
       { id: 5, days: 24, price: 30 },
       { id: 6, days: 30, price: 25 },
     ],
+    countInStock: 5,
   },
   {
     id: 4,
@@ -74,6 +77,7 @@ const products = [
       { id: 5, days: 24, price: 35 },
       { id: 6, days: 30, price: 30 },
     ],
+    countInStock: 5,
   },
 ];
 

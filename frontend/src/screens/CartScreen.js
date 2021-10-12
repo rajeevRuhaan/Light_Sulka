@@ -15,9 +15,7 @@ const CartScreen = () => {
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
 
-  useEffect(() => {
-    "";
-  }, []);
+  useEffect(() => {}, []);
 
   const qtyChangeHandler = (id, qty) => {
     dispatch(addToCart(id, qty));
@@ -33,7 +31,7 @@ const CartScreen = () => {
 
   const getCartSubTotal = () => {
     return cartItems
-      .reduce((price, item) => price + item.price * item.qty, 0)
+      .reduce((total, item) => Number(total) + Number(item.total * item.qty), 0)
       .toFixed(2);
   };
 
@@ -42,7 +40,6 @@ const CartScreen = () => {
       <div className="cartscreen">
         <div className="cartscreen__left">
           <h2>Shopping Cart</h2>
-
           {cartItems.length === 0 ? (
             <div>
               Your Cart Is Empty <Link to="/">Go Back</Link>
