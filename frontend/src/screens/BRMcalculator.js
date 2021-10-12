@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import CalculatorResult from "./CalculatorResult";
+
 import "./BRMcalculator.css";
 
 const BRMcalculator = () => {
@@ -60,6 +61,8 @@ const BRMcalculator = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setBMRResult(calculateBMR());
+    setShowModel(true);
+    e.target.reset();
   };
 
   return (
@@ -98,7 +101,8 @@ const BRMcalculator = () => {
         ))}
         <h3>What is your desire weight?</h3>
         <Form.Control
-          type="text"
+          type="number"
+          min="40"
           name="weight"
           onChange={handleChange}
           placeholder="Weight in Kg"
@@ -106,21 +110,27 @@ const BRMcalculator = () => {
         />
         <h3>Let's check another data?</h3>
         <Form.Control
-          type="text"
+          type="number"
+          min="20"
+          max="60"
           name="age"
           onChange={handleChange}
           placeholder="Age (years)"
           required
         />{" "}
         <Form.Control
-          type="text"
+          type="number"
+          min="130"
+          max="180"
           name="height"
           onChange={handleChange}
           placeholder="Height (cm)"
           required
         />
         <Form.Control
-          type="text"
+          type="number"
+          min="30"
+          max="100"
           name="currentWeight"
           onChange={handleChange}
           placeholder="Current Weight (Kg)"
@@ -161,9 +171,7 @@ const BRMcalculator = () => {
             />
           </div>
         ))}
-        <Button type="submit" onClick={() => setShowModel(true)}>
-          Calculate
-        </Button>
+        <Button type="submit">Calculate</Button>
       </Form>
 
       {showModel && (
