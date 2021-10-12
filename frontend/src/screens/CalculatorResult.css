@@ -1,0 +1,13 @@
+.modal-dialog {
+  margin-top: 20%;
+}
+
+.modal-content div {
+  margin: 0 auto;
+}
+@media (max-width: 500px) {
+  .modal-dialog {
+    margin-left: auto;
+    margin-top: auto;
+  }
+} ;

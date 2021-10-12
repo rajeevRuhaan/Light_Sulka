@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import CalculatorResult from "./CalculatorResult";
 import "./BRMcalculator.css";
 
 const BRMcalculator = () => {
@@ -13,34 +14,52 @@ const BRMcalculator = () => {
     active: "",
   });
 
+  const [bmrResult, setBMRResult] = useState(0);
+  const [showModel, setShowModel] = useState(false);
+
   const handleChange = (e) => {
     setInputData({ ...inputData, [e.target.name]: e.target.value });
   };
   console.log(inputData);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const calculateBMR = () => {
     let bmi;
     if (inputData.gender === "male") {
+      console.log("You are male!");
       const bmrMale =
         9.99 * inputData.weight +
         6.25 * inputData.height -
         4.92 * inputData.age +
         5;
-      if (inputData.active === "lessactive") {
+      if (inputData.active === "lessActive") {
         bmi = bmrMale * 1.2;
-        return bmi;
       } else if (inputData.active === "middleActive") {
         bmi = bmrMale * 1.46;
-        return bmi;
       } else {
         bmi = bmrMale * 1.72;
-        return bmi;
       }
     } else {
-      console.log("you are female");
+      console.log("you are female!");
+      const bmrFemale =
+        9.99 * inputData.weight +
+        6.25 * inputData.height -
+        4.92 * inputData.age +
+        -161;
+      if (inputData.active === "lessActive") {
+        bmi = bmrFemale * 1.2;
+      } else if (inputData.active === "middleActive") {
+        bmi = bmrFemale * 1.46;
+      } else {
+        bmi = bmrFemale * 1.72;
+      }
     }
-    console.log(bmi);
+    console.log(Math.floor(bmi));
+    return Math.floor(bmi);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setBMRResult(calculateBMR());
   };
 
   return (
@@ -85,7 +104,7 @@ const BRMcalculator = () => {
           placeholder="Weight in Kg"
           required
         />
-        <h3>What is your desire weight?</h3>
+        <h3>Let's check another data?</h3>
         <Form.Control
           type="text"
           name="age"
@@ -142,8 +161,19 @@ const BRMcalculator = () => {
             />
           </div>
         ))}
-        <Button type="submit">Calculate</Button>
+        <Button type="submit" onClick={() => setShowModel(true)}>
+          Calculate
+        </Button>
       </Form>
+
+      {showModel && (
+        <CalculatorResult
+          show={showModel}
+          onClose={() => setShowModel(false)}
+          result={bmrResult}
+          input={inputData}
+        />
+      )}
     </div>
   );
 };
