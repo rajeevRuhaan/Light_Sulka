@@ -12,13 +12,8 @@ import MessageBox from "../components/MessageBox";
 
 const ProductScreen = ({ match, history }) => {
   const [qty, setQty] = useState(1);
-  const [selectedData, setSelectedData] = useState(0);
 
-  const getData = (e) => {
-    setSelectedData(e.target.value);
-
-    console.log(e.target.value);
-  };
+  const [total, setTotal] = useState(0);
 
   const dispatch = useDispatch();
 
@@ -33,9 +28,10 @@ const ProductScreen = ({ match, history }) => {
   }, [dispatch, match, product]);
 
   const addToCartHandler = () => {
-    dispatch(addToCart(product._id, qty));
+    dispatch(addToCart(product._id, qty, total));
     history.push(`/cart`);
   };
+  console.log(addToCart);
 
   return (
     <div className="productscreen">
@@ -54,7 +50,7 @@ const ProductScreen = ({ match, history }) => {
                 {product.name}
                 {product.calories}
               </p>
-              <p>Price: ${product.price}</p>
+              <p>Additional info: {product.cpfc}</p>
               <p>Description: {product.description}</p>
             </div>
           </div>
@@ -66,20 +62,17 @@ const ProductScreen = ({ match, history }) => {
                     <button
                       className="button_prices"
                       key={item.id}
-                      value={[item]}
-                      onClick={getData}
+                      value={[item.price * item.days]}
+                      onClick={(e) => setTotal(e.target.value)}
                     >
-                      <div className="price_perday">
-                        <i class="fas fa-euro-sign">{item.price}</i>/ per day
-                      </div>
-                      <strong>{item.days}days</strong>
+                      {item.price}
+                      €/ per day,
+                      {item.days}days
                     </button>
                   ))}
               </div>
-              <p>
-                Total: {selectedData}
-                <i class="fas fa-euro-sign"></i>
-              </p>
+              <p>{product.additionalInfo}</p>
+              <p>Total: {total} €</p>
               <p>
                 Qty
                 <select value={qty} onChange={(e) => setQty(e.target.value)}>
