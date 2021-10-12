@@ -12,7 +12,7 @@ import MessageBox from "../components/MessageBox";
 
 const ProductScreen = ({ match, history }) => {
   const [qty, setQty] = useState(1);
-  const [selectedData, setSelectedData] = useState(0);
+  const [total, setSelectedData] = useState(0);
 
   const getData = (e) => {
     setSelectedData(e.target.value);
@@ -66,7 +66,7 @@ const ProductScreen = ({ match, history }) => {
                     <button
                       className="button_prices"
                       key={item.id}
-                      value={[item]}
+                      value={item.price * item.days}
                       onClick={getData}
                     >
                       <div className="price_perday">
