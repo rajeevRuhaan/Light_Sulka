@@ -6,15 +6,30 @@ import "./CalculatorResult.css";
 
 const CalculatorResult = ({ result, onClose, input }) => {
   const [productid, setproductid] = useState();
+  const [reCalcCalories, setReCalcCalories] = useState();
 
   const getProductLink = async () => {
     const datas = await axios.get("/api/products");
 
-    if (result < 1000) {
+    const desiredWeightLoose = input.currentWeight - input.weight;
+
+    const recCalculateCalories = () => {
+      if (desiredWeightLoose < 10) {
+        return result - result * 0.15;
+      } else if (desiredWeightLoose < 20) {
+        return result - result * 0.2;
+      } else {
+        return result - result * 0.25;
+      }
+    };
+
+    setReCalcCalories(recCalculateCalories);
+
+    if (recCalculateCalories < 1000) {
       setproductid(datas.data[0]._id);
-    } else if (result < 1500) {
+    } else if (recCalculateCalories < 1500) {
       setproductid(datas.data[1]._id);
-    } else if (result < 2000) {
+    } else if (recCalculateCalories < 2000) {
       setproductid(datas.data[2]._id);
     } else {
       setproductid(datas.data[3]._id);
@@ -40,11 +55,18 @@ const CalculatorResult = ({ result, onClose, input }) => {
             <h3>Your BMR result</h3>
             <p>
               {" "}
-              {result} <span>Calories/day</span>
+              <b>{result}</b> <span>Calories/day</span>
             </p>
           </div>
           <Button onClick={onClose}>Close</Button>
           {/* <Button onClick={() => getProductLink()}>Proceed to Product</Button> */}
+          <p>
+            Based on you desired weight plan, your daily meal should contain
+            <b> {reCalcCalories}</b> Kcal.
+          </p>
+          <p>
+            Click <b>View </b>button to see our recomended food plan
+          </p>
           <Link to={`/product/${productid}`} className="info__button">
             View
           </Link>

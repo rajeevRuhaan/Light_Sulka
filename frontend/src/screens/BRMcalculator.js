@@ -21,14 +21,12 @@ const BRMcalculator = () => {
   const handleChange = (e) => {
     setInputData({ ...inputData, [e.target.name]: e.target.value });
   };
-  console.log(inputData);
 
   const calculateBMR = () => {
     let bmi;
     if (inputData.gender === "male") {
-      console.log("You are male!");
       const bmrMale =
-        9.99 * inputData.weight +
+        9.99 * inputData.currentWeight +
         6.25 * inputData.height -
         4.92 * inputData.age +
         5;
@@ -40,12 +38,11 @@ const BRMcalculator = () => {
         bmi = bmrMale * 1.72;
       }
     } else {
-      console.log("you are female!");
       const bmrFemale =
-        9.99 * inputData.weight +
+        9.99 * inputData.currentWeight +
         6.25 * inputData.height -
-        4.92 * inputData.age +
-        -161;
+        4.92 * inputData.age -
+        161;
       if (inputData.active === "lessActive") {
         bmi = bmrFemale * 1.2;
       } else if (inputData.active === "middleActive") {
