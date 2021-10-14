@@ -1,0 +1,19 @@
+.modal-dialog {
+  margin-top: 10%;
+}
+.modal-content {
+  background-color: chartreuse;
+}
+h1 {
+  margin: 0 30%;
+}
+
+.modal-content div {
+  margin: 0 auto;
+}
+@media (max-width: 500px) {
+  .modal-dialog {
+    margin-left: auto;
+    margin-top: auto;
+  }
+} ;
