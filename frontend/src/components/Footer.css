@@ -1,5 +1,4 @@
 .footer {
-  padding-top: 1rem;
   width: 100%;
   background: #b2efb8;
   align-items: center;
@@ -8,9 +7,6 @@
   color: black;
 }
 
-.container {
-  padding-bottom: 1rem;
-}
 .footer_bottom {
   text-align: center;
 }
