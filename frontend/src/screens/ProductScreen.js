@@ -12,8 +12,11 @@ import MessageBox from "../components/MessageBox";
 
 const ProductScreen = ({ match, history }) => {
   const [qty, setQty] = useState(1);
+  const [total, setTotal] = useState([]);
 
-  const [total, setTotal] = useState(0);
+  const showData = (e) => {
+    setTotal(e.target.value);
+  };
 
   const dispatch = useDispatch();
 
@@ -31,7 +34,6 @@ const ProductScreen = ({ match, history }) => {
     dispatch(addToCart(product._id, qty, total));
     history.push(`/cart`);
   };
-  console.log(addToCart);
 
   return (
     <div className="productscreen">
@@ -62,16 +64,16 @@ const ProductScreen = ({ match, history }) => {
                     <button
                       className="button_prices"
                       key={item.id}
-                      value={[item.price * item.days]}
-                      onClick={(e) => setTotal(e.target.value)}
+                      value={item.price * item.days}
+                      onClick={showData}
                     >
-                      {item.price}
-                      €/ per day,
-                      {item.days}days
+                      {item.price} €/ per day ({item.days} days)
                     </button>
                   ))}
               </div>
               <p>{product.additionalInfo}</p>
+              <p>Price: price: €</p>
+              <p>Days: days: days</p>
               <p>Total: {total} €</p>
               <p>
                 Qty

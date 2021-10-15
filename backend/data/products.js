@@ -1,5 +1,6 @@
 const products = [
   {
+    id: 1,
     name: "Weight Lose",
     calories: "750 kcal",
     imageUrl:
@@ -19,6 +20,7 @@ const products = [
     countInStock: 5,
   },
   {
+    id: 2,
     name: "Weight Lose",
     calories: "1000 kcal",
     imageUrl:
@@ -38,6 +40,7 @@ const products = [
     countInStock: 5,
   },
   {
+    id: 3,
     name: "Weight Lose",
     calories: "1500 kcal",
     imageUrl:
@@ -57,6 +60,7 @@ const products = [
     countInStock: 5,
   },
   {
+    id: 4,
     name: "Weight Balance",
     calories: "2000 kcal",
     imageUrl:

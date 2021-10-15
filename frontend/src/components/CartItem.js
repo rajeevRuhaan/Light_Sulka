@@ -8,8 +8,9 @@ const CartItem = ({ item, qtyChangeHandler, removeHandler }) => {
         <img src={item.imageUrl} alt={item.name} />
       </div>
       <Link to={`/product/${item.product}`} className="cartItem__name">
-        <p>{item.name}</p>
-        <p>{item.calories}</p>
+        <p>
+          {item.name},{item.calories}
+        </p>
       </Link>
       <p className="cartitem__price">${item.total}</p>
       <select

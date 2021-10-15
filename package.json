@@ -1,7 +1,7 @@
 {
   "name": "lightsulka",
   "version": "1.0.0",
-  "description": "A Full-Stack Ecommerce application that uss React, Redux, MongoDB, Nodejs, ExpressJS",
+  "description": "A Full-Stack Ecommerce application that use React, Redux, MongoDB, Nodejs, ExpressJS",
   "main": "server.js",
   "scripts": {
     "start": "node backend/server.js",
