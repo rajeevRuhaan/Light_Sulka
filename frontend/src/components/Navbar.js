@@ -32,11 +32,6 @@ const Navbar = ({ click }) => {
           </Link>
         </li>
         <li>
-          <Link to="/signin" className="cart__link">
-            Sign In
-          </Link>
-        </li>
-        <li>
           <Link to="/cart" className="cart__link">
             <i className="fas fa-shopping-cart"></i>
             Cart

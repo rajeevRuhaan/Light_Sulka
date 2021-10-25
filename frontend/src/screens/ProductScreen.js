@@ -32,22 +32,10 @@ const ProductScreen = ({ match, history }) => {
     }
   }, [dispatch, match, product]);
 
-  /* const [dataPrice] = useState([product.prices]);
-  console.log(dataPrice); */
-
   const addToCartHandler = () => {
     dispatch(addToCart(product._id, qty, total));
     history.push(`/cart`);
   };
-
-  // const getNumber = () => {
-  //   let idPirces = document.querySelectorAll('input[id="idPirce"]');
-  //   for (let i = 0; i < idPirces.length; i++) {
-  //     let num = idPirces[i].value;
-  //     idPirces[i].parentElement.children[2].innerHTML = num;
-  //   }
-  // };
-
   return (
     <div className="productscreen">
       {loading ? (
@@ -80,15 +68,22 @@ const ProductScreen = ({ match, history }) => {
                       id={item.id}
                       onClick={() => showData(item)}
                     >
-                      <span>{item.price} €/ per day </span>(
-                      <strong>{item.days} days </strong>)
+                      <span className="price_perday">
+                        <i class="fas fa-euro-sign">{item.price} </i>/ per day
+                      </span>
+                      <br />
+                      <span>
+                        <strong>{item.days} days </strong>
+                      </span>
                     </button>
                   ))}
               </div>
-              <p>{product.additionalInfo}</p>
-              <p>Price: {active.price} €</p>
-              <p>Days: {active.days} days</p>
-              <p>Total: {total} €</p>
+              <p>
+                {product.additionalInfo} for {active.price} €
+              </p>
+              <p>
+                Total {active.days} days: {total} €
+              </p>
               <p>
                 Qty
                 <select
