@@ -12,10 +12,12 @@ import MessageBox from "../components/MessageBox";
 
 const ProductScreen = ({ match, history }) => {
   const [qty, setQty] = useState(1);
-  const [total, setTotal] = useState([]);
+  const [total, setTotal] = useState([0]);
+  const [active, setActive] = useState({ price: 0, days: 0 });
 
-  const showData = (e) => {
-    setTotal(e.target.value);
+  const showData = (item) => {
+    setActive(item);
+    setTotal(item.price * item.days);
   };
 
   const dispatch = useDispatch();
@@ -34,7 +36,6 @@ const ProductScreen = ({ match, history }) => {
     dispatch(addToCart(product._id, qty, total));
     history.push(`/cart`);
   };
-
   return (
     <div className="productscreen">
       {loading ? (
@@ -64,20 +65,31 @@ const ProductScreen = ({ match, history }) => {
                     <button
                       className="button_prices"
                       key={item.id}
-                      value={item.price * item.days}
-                      onClick={showData}
+                      id={item.id}
+                      onClick={() => showData(item)}
                     >
-                      {item.price} €/ per day ({item.days} days)
+                      <span className="price_perday">
+                        <i class="fas fa-euro-sign">{item.price} </i>/ per day
+                      </span>
+                      <br />
+                      <span>
+                        <strong>{item.days} days </strong>
+                      </span>
                     </button>
                   ))}
               </div>
-              <p>{product.additionalInfo}</p>
-              <p>Price: price: €</p>
-              <p>Days: days: days</p>
-              <p>Total: {total} €</p>
+              <p>
+                {product.additionalInfo} for {active.price} €
+              </p>
+              <p>
+                Total {active.days} days: {total} €
+              </p>
               <p>
                 Qty
-                <select value={qty} onChange={(e) => setQty(e.target.value)}>
+                <select
+                  value={qty}
+                  onChange={(e) => setQty(Number(e.target.value))}
+                >
                   {[...Array(product.countInStock).keys()].map((x) => (
                     <option key={x + 1} value={x + 1}>
                       {x + 1}

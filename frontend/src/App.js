@@ -15,7 +15,7 @@ import ProductsScreen from "./screens/ProductsScreen";
 import BRMcalculator from "./screens/BRMcalculator";
 
 import CartScreen from "./screens/CartScreen";
-import SigninScreen from "./screens/SigninScreen";
+import Prices from "./screens/Prices";
 import Delivery from "./screens/Delivery";
 import Payments from "./screens/Payments";
 
@@ -33,7 +33,7 @@ function App() {
           <Route exact path="/product/:id" component={ProductScreen} />
           <Route exact path="/programs" component={ProductsScreen} />
           <Route exact path="/calculator" component={BRMcalculator} />
-          <Route exact path="/signin" component={SigninScreen} />
+          <Route exact path="/prices" component={Prices} />
           <Route exact path="/cart" component={CartScreen} />
           <Route exact path="/delivery" component={Delivery} />
           <Route exact path="/payments" component={Payments} />

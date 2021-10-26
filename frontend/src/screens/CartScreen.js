@@ -19,8 +19,8 @@ const CartScreen = () => {
     "";
   }, []);
 
-  const qtyChangeHandler = (id, qty) => {
-    dispatch(addToCart(id, qty));
+  const qtyChangeHandler = (id, qty, total) => {
+    dispatch(addToCart(id, qty, total));
   };
 
   const removeFromCartHandler = (id) => {
@@ -28,7 +28,7 @@ const CartScreen = () => {
   };
 
   const getCartCount = () => {
-    return cartItems.reduce((qty, item) => Number(item.qty) + qty, 0);
+    return cartItems.reduce((qty, item) => Number(item.qty) + Number(qty), 0);
   };
 
   const getCartSubTotal = () => {
