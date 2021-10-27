@@ -1,6 +1,7 @@
 import "./ProductScreen.css";
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import Button from "react-bootstrap/Button";
 
 // Actions
 import { getProductDetails } from "../redux/actions/productActions";
@@ -62,20 +63,22 @@ const ProductScreen = ({ match, history }) => {
               <div className="button_section">
                 {product.prices &&
                   product.prices.map((item) => (
-                    <button
+                    <Button
+                      variant="success"
                       className="button_prices"
                       key={item.id}
                       id={item.id}
                       onClick={() => showData(item)}
                     >
                       <span className="price_perday">
-                        <i class="fas fa-euro-sign">{item.price} </i>/ per day
+                        <i className="fas fa-euro-sign">{item.price} </i>/ per
+                        day
                       </span>
                       <br />
                       <span>
                         <strong>{item.days} days </strong>
                       </span>
-                    </button>
+                    </Button>
                   ))}
               </div>
               <p>
