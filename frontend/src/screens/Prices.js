@@ -3,7 +3,7 @@ import Table from "react-bootstrap/Table";
 
 const Prices = () => {
   return (
-    <>
+    <div className="prices_container">
       <Table striped bordered hover>
         <thead>
           <tr>
@@ -65,7 +65,7 @@ const Prices = () => {
           </tr>
         </tbody>
       </Table>
-    </>
+    </div>
   );
 };
 

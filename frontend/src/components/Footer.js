@@ -5,6 +5,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Link } from "react-router-dom";
+import Subscribe from "./Subscribe";
 
 const Footer = () => {
   return (
@@ -63,9 +64,7 @@ const Footer = () => {
           </Col>
           <Col>
             <Row>
-              <p>Subscribe</p>
-              <input type="email" />
-              <button>Subscribe</button>
+              <Subscribe />
             </Row>
             <Row></Row>
           </Col>

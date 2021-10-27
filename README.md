@@ -4,7 +4,7 @@ A Full-Stack Ecommerce application that uss React, Redux, MongoDB, Nodejs, Expre
 
 <hr>
 
-[![github-follow](https://img.shields.io/github/followers/imbingz?label=Follow&logoColor=purple&style=social)](https://github.com/dariwwka)
+[![github-follow](https://img.shields.io/github/followers/imbingz?label=Follow&logoColor=purple&style=social)](https://github.com/Dariwka)
 [![github-follow](https://img.shields.io/github/followers/imbingz?label=Follow&logoColor=purple&style=social)](https://github.com/rajeevRuhaan)
 [![project-languages-used](https://img.shields.io/github/languages/count/imbingz/MERN-stack-ecommerce)](https://github.com/Dariwka/Light_Sulka)
 [![project-top-language](https://img.shields.io/github/languages/top/imbingz/MERN-stack-ecommerce?color=blueviolet)](https://github.com/Dariwka/Light_Sulka)
@@ -54,7 +54,7 @@ As a seller/user, I want to have a responsive e-commerce application that allows
 Frontend: Reactjs, Redux
 Backend: node.js, Mongodb, Mongoose, Express js
 
-Other tools: Paypal API, Stripe API
+Other tools: Cloudinary, Mailchimp
 ```
 
 ## Installation
@@ -76,9 +76,9 @@ npm test
 ## Authors Contact
 
 Contact the authors with any questions!<br>
-Github link: [dariwwka](https://github.com/dariwwka)<br>
-Github link: [rajeev](https://github.com/rajeevRuhaan)<br>
-Github link: [sagar](https://github.com/)<br>
+Github link: [Dariwka](https://github.com/Dariwka)<br>
+Github link: [Rajeev](https://github.com/rajeevRuhaan)<br>
+Github link: [Sagar](https://github.com/sagar-aryal)<br>
 Email:
 
 ## License
