@@ -1,3 +1,10 @@
+.aboutus {
+  margin-left: 5rem;
+  align-items: center;
+}
+.aboutus p {
+  font-size: 24px;
+}
 .aboutpage {
   display: flex;
   height: fit-content;

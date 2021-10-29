@@ -4,36 +4,28 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import "./CalculatorResult.css";
 
-const CalculatorResult = ({ result, onClose, input }) => {
+const CalculatorResult = ({ result, onClose, reCal }) => {
   const [productid, setproductid] = useState();
-  const [reCalcCalories, setReCalcCalories] = useState();
 
   const getProductLink = async () => {
     const datas = await axios.get("/api/products");
 
-    const desiredWeightLoose = input.currentWeight - input.weight;
-
-    const recCalculateCalories = () => {
-      if (desiredWeightLoose < 10) {
-        return result - result * 0.15;
-      } else if (desiredWeightLoose < 20) {
-        return result - result * 0.2;
+    function productId() {
+      if (reCal < 1000) {
+        console.log("1000");
+        return setproductid(datas.data[0]._id);
+      } else if (reCal < 1500) {
+        console.log("1500");
+        return setproductid(datas.data[1]._id);
+      } else if (reCal < 2000) {
+        console.log("2000");
+        return setproductid(datas.data[2]._id);
       } else {
-        return result - result * 0.25;
+        console.log("2000+");
+        return setproductid(datas.data[3]._id);
       }
-    };
-
-    setReCalcCalories(recCalculateCalories);
-
-    if (recCalculateCalories < 1000) {
-      setproductid(datas.data[0]._id);
-    } else if (recCalculateCalories < 1500) {
-      setproductid(datas.data[1]._id);
-    } else if (recCalculateCalories < 2000) {
-      setproductid(datas.data[2]._id);
-    } else {
-      setproductid(datas.data[3]._id);
     }
+    productId();
   };
   getProductLink();
 
@@ -43,7 +35,6 @@ const CalculatorResult = ({ result, onClose, input }) => {
         <div className="modal-content">
           <p>
             {" "}
-            {input.gender}
             <i
               class="far fa-times-circle"
               onClick={onClose}
@@ -62,7 +53,7 @@ const CalculatorResult = ({ result, onClose, input }) => {
           {/* <Button onClick={() => getProductLink()}>Proceed to Product</Button> */}
           <p>
             Based on you desired weight plan, your daily meal should contain
-            <b> {reCalcCalories}</b> Kcal.
+            <b> {reCal}</b> Kcal.
           </p>
           <p>
             Click <b>View </b>button to see our recomended food plan

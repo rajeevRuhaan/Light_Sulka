@@ -38,8 +38,8 @@ function App() {
           <Route exact path="/payments" component={Payments} />
           <Route exact path="/about" component={About} />
         </Switch>
-        <Footer />
       </main>
+      <Footer />
     </Router>
   );
 }
