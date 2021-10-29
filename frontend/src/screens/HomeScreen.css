@@ -1,7 +1,7 @@
 .homescreen {
   max-width: 100%;
   background: #47c15a;
-  padding: 2rem 1rem 15rem;
+  padding: 1rem 1rem 1rem 1rem;
 }
 
 .homescreen__title {
@@ -20,11 +20,11 @@
   grid-template-columns: repeat(4, 1fr);
 }
 
-@media (max-width: 1232px) {
+/* @media (max-width: 1232px) {
   .homescreen__products {
     grid-template-columns: repeat(3, auto);
   }
-}
+} */
 
 @media (max-width: 950px) {
   .homescreen__products {

@@ -19,17 +19,10 @@ const Footer = () => {
               <Link to="/calculator">BMR Calculator</Link>
             </Row>
           </Col>
+
           <Col>
             <Row>
-              <Link to="/payments">Payments</Link>
-            </Row>
-            <Row>
-              <Link to="/delivery">Delivery</Link>
-            </Row>
-          </Col>
-          <Col>
-            <Row>
-              <Link to="/">About Us</Link>
+              <Link to="/about">About Us</Link>
             </Row>
             <div className="social-networks">
               <a
@@ -39,17 +32,9 @@ const Footer = () => {
                 className="github"
                 title="our github"
               >
-                <i class="fab fa-github" />
+                <i class="fab fa-github fa-2x" />
               </a>
-              <a
-                href=""
-                className="facebook"
-                rel="noopener noreferrer"
-                target="_blank"
-                title="facebook"
-              >
-                <i class="fab fa-facebook" />
-              </a>
+
               <a
                 href=""
                 className="instagram"
@@ -57,14 +42,14 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 title="instagram"
               >
-                <i class="fab fa-instagram" />
+                <i class="fab fa-instagram fa-2x" />
               </a>
             </div>
           </Col>
           <Col>
             <Row>
               <p>Subscribe</p>
-              <input type="email" />
+              <input type="email" placeholder="e-mail address" />
               <button>Subscribe</button>
             </Row>
             <Row></Row>

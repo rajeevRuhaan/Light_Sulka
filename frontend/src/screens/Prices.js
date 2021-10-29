@@ -1,10 +1,11 @@
 import React from "react";
 import Table from "react-bootstrap/Table";
+import "./Prices.css";
 
 const Prices = () => {
   return (
-    <>
-      <Table striped bordered hover>
+    <div className="table">
+      <Table striped bordered hover size="small">
         <thead>
           <tr>
             <th></th>
@@ -65,7 +66,7 @@ const Prices = () => {
           </tr>
         </tbody>
       </Table>
-    </>
+    </div>
   );
 };
 

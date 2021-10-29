@@ -2,11 +2,18 @@
   width: 100%;
   background: #b2efb8;
   align-items: center;
-  position: fixed;
   bottom: 0;
+
   color: black;
 }
 
 .footer_bottom {
   text-align: center;
+  margin-top: -3rem;
+  padding-bottom: 1rem;
+}
+
+.social-networks a {
+  padding: 1rem;
+  margin-left: -1rem;
 }
