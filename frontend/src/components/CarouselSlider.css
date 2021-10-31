@@ -1,0 +1,17 @@
+.carousel-item img {
+  width: 70%;
+
+  margin: 1% auto;
+  border-style: ridge;
+  border-radius: 30px;
+}
+/* .carousel-caption p:first-child {
+} */
+
+@media (max-width: 600px) {
+  .carousel-item img {
+    width: 100%;
+    border-style: none;
+    border-radius: 0%;
+  }
+}

@@ -54,6 +54,18 @@ const BRMcalculator = () => {
     console.log(Math.floor(bmi));
     return Math.floor(bmi);
   };
+  // calculate required calories
+  const weightLoose = inputData.currentWeight - inputData.weight;
+  console.log(weightLoose);
+  function recCalculateCalories() {
+    if (weightLoose < 11) {
+      return Math.floor(bmrResult - bmrResult * 0.25);
+    } else if (weightLoose < 21) {
+      return Math.floor(bmrResult - bmrResult * 0.4);
+    } else {
+      return Math.floor(bmrResult - bmrResult * 0.55);
+    }
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -175,8 +187,8 @@ const BRMcalculator = () => {
         <CalculatorResult
           show={showModel}
           onClose={() => setShowModel(false)}
+          reCal={recCalculateCalories()}
           result={bmrResult}
-          input={inputData}
         />
       )}
     </div>

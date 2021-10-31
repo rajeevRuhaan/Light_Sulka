@@ -22,13 +22,23 @@ const Navbar = ({ click }) => {
       </div>
       <ul className="navbar__links">
         <li>
-          <Link to="/programs" className="cart__link">
-            Programs
+          <Link to="/" className="cart__link">
+            Home
           </Link>
         </li>
         <li>
           <Link to="/calculator" className="cart__link">
             BMR Calculator
+          </Link>
+        </li>
+        <li>
+          <Link to="/prices" className="cart__link">
+            Prices
+          </Link>
+        </li>
+        <li>
+          <Link to="/about" className="cart__link">
+            About Us
           </Link>
         </li>
         <li>

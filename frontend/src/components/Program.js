@@ -25,11 +25,11 @@ const Program = ({
         </footer>
       </Card.Body>
       <Card.Footer>
-        <Button variant="success" className="info__button">
-          <Link to={`/product/${productId}`} className="info__button_link">
+        <Link to={`/product/${productId}`} className="info__button_link">
+          <Button variant="success" className="info__button">
             View
-          </Link>
-        </Button>
+          </Button>
+        </Link>
       </Card.Footer>
     </Card>
   );

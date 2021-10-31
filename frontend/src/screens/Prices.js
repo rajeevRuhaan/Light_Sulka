@@ -1,10 +1,11 @@
 import React from "react";
 import Table from "react-bootstrap/Table";
+import "./Prices.css";
 
 const Prices = () => {
   return (
-    <div className="prices_container">
-      <Table striped bordered hover>
+    <div className="table">
+      <Table striped bordered hover size="small">
         <thead>
           <tr>
             <th></th>

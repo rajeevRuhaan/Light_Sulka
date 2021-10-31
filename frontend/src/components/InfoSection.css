@@ -1,30 +1,38 @@
 .section {
   background: #b2efb8;
   width: 100%;
-  padding: 1rem;
 }
 
 .info {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .info_item {
-  flex-direction: column;
-  align-items: center;
+  display: flex;
+  /* align-items: center; */
+  /* justify-content: space-around; */
   position: relative;
 }
 
 .info_item_icon {
-  font-size: 3rem;
+  font-size: 2rem;
   text-align: center;
+  margin-right: 2rem;
 }
 
 .info_item_text {
-  align-items: center;
-  padding: 0 20%;
+  /* align-items: center; */
+  /* padding: 2rem auto; */
+  padding: 1rem;
 }
 
 .info_item_text p {
   text-align: center;
+}
+
+@media (max-width: 600px) {
+  .info {
+    flex-direction: column;
+  }
 }
