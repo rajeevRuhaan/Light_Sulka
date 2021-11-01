@@ -4,6 +4,7 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 
 const Program = ({
+  id,
   name,
   calories,
   imageUrl,
@@ -12,7 +13,7 @@ const Program = ({
   productId,
 }) => {
   return (
-    <Card className="card_card">
+    <Card className="card_card" value={id}>
       <Card.Header>
         <Card.Title className="card_title">{name}</Card.Title>
       </Card.Header>

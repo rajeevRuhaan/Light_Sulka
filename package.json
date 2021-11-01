@@ -21,13 +21,5 @@
   "devDependencies": {
     "concurrently": "^6.3.0",
     "nodemon": "^2.0.13"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sagar-aryal/Light_Sulka.git"
-  },
-  "bugs": {
-    "url": "https://github.com/sagar-aryal/Light_Sulka/issues"
-  },
-  "homepage": "https://github.com/sagar-aryal/Light_Sulka#readme"
+  }
 }

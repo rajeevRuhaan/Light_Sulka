@@ -18,6 +18,7 @@ import CartScreen from "./screens/CartScreen";
 import Prices from "./screens/Prices";
 import Delivery from "./screens/Delivery";
 import Payments from "./screens/Payments";
+import AboutScreen from "./screens/AboutScreen";
 
 function App() {
   const [sideToggle, setSideToggle] = useState(false);
@@ -37,6 +38,7 @@ function App() {
           <Route exact path="/cart" component={CartScreen} />
           <Route exact path="/delivery" component={Delivery} />
           <Route exact path="/payments" component={Payments} />
+          <Route exact path="/about" component={AboutScreen} />
         </Switch>
       </main>
       <Footer />

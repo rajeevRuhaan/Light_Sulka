@@ -30,6 +30,7 @@ const Programs = () => {
         products.map((product) => (
           <Col>
             <Program
+              id={product.id}
               key={product._id}
               productId={product._id}
               name={product.name}

@@ -5,7 +5,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Link } from "react-router-dom";
-import Subscribe from "./Subscribe";
+import SubscribeMail from "./SubscribeMail";
 
 const Footer = () => {
   return (
@@ -30,7 +30,7 @@ const Footer = () => {
           </Col>
           <Col>
             <Row>
-              <Link to="/">About Us</Link>
+              <Link to="/about">About Us</Link>
             </Row>
             <div className="social-networks">
               <a
@@ -64,7 +64,7 @@ const Footer = () => {
           </Col>
           <Col>
             <Row>
-              <Subscribe />
+              <SubscribeMail />
             </Row>
             <Row></Row>
           </Col>
