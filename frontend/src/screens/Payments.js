@@ -8,7 +8,7 @@ const Payments = () => {
   const [showModel, setShowModel] = useState(false);
 
   const handleSubmit = (e) => {
-    // e.preventDefault();
+    e.preventDefault();
     setShowModel(true);
   };
   return (

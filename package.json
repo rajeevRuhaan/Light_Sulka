@@ -5,7 +5,6 @@
   "main": "server.js",
   "scripts": {
     "start": "node backend/server.js",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install npm && run build",
     "server": "nodemon backend/server.js",
     "client": "npm start --prefix frontend",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
@@ -22,8 +21,5 @@
   "devDependencies": {
     "concurrently": "^6.3.0",
     "nodemon": "^2.0.13"
-  },
-  "engines": {
-    "node": "14.17.6"
   }
 }
