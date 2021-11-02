@@ -54,7 +54,7 @@ As a seller/user, I want to have a responsive e-commerce application that allows
 Frontend: Reactjs, Redux
 Backend: node.js, Mongodb, Mongoose, Express js
 
-Other tools: Cloudinary, Mailchimp
+Other tools: Cloudinary, Emailjs-com, Bootstrap
 ```
 
 ## Installation
