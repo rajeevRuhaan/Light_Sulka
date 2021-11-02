@@ -28,10 +28,9 @@ const Programs = () => {
         <MessageBox variant="danger"> {error} </MessageBox>
       ) : (
         products.map((product) => (
-          <Col>
+          <Col key={product._id} className="program_col">
             <Program
               id={product.id}
-              key={product._id}
               productId={product._id}
               name={product.name}
               calories={product.calories}

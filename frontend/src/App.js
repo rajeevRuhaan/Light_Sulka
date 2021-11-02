@@ -11,7 +11,6 @@ import Footer from "./components/Footer";
 //Screens
 import HomeScreen from "./screens/HomeScreen";
 import ProductScreen from "./screens/ProductScreen";
-import ProductsScreen from "./screens/ProductsScreen";
 import BRMcalculator from "./screens/BRMcalculator";
 
 import CartScreen from "./screens/CartScreen";
@@ -32,7 +31,6 @@ function App() {
         <Switch>
           <Route exact path="/" component={HomeScreen} />
           <Route exact path="/product/:id" component={ProductScreen} />
-          <Route exact path="/programs" component={ProductsScreen} />
           <Route exact path="/calculator" component={BRMcalculator} />
           <Route exact path="/prices" component={Prices} />
           <Route exact path="/cart" component={CartScreen} />

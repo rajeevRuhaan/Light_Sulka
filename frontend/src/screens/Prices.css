@@ -1,0 +1,14 @@
+.table {
+  padding: 2rem;
+}
+
+@media (min-width: 768px) {
+  .example .mobile_only {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .example .desktop_only {
+    display: none;
+  }
+}

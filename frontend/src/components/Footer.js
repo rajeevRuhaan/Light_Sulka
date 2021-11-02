@@ -10,68 +10,67 @@ import SubscribeMail from "./SubscribeMail";
 const Footer = () => {
   return (
     <div className="footer">
-      <Container>
+      <Container className="footer_container">
         <Row>
           <Col>
             <Row>
-              <Link to="/prices">Prices</Link>
-            </Row>
-            <Row>
-              <Link to="/calculator">BMR Calculator</Link>
-            </Row>
-          </Col>
-          <Col>
-            <Row>
-              <Link to="/payments">Payments</Link>
-            </Row>
-            <Row>
-              <Link to="/delivery">Delivery</Link>
+              <Link className="social_link" to="/about">
+                About Us
+              </Link>
             </Row>
           </Col>
           <Col>
             <Row>
-              <Link to="/about">About Us</Link>
+              <Link className="social_link" to="/calculator">
+                BMR Calculator
+              </Link>
             </Row>
-            <div className="social-networks">
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://github.com/Dariwka/Light_Sulka"
-                className="github"
-                title="our github"
-              >
-                <i class="fab fa-github" />
-              </a>
-              <a
-                href=""
-                className="facebook"
-                rel="noopener noreferrer"
-                target="_blank"
-                title="facebook"
-              >
-                <i class="fab fa-facebook" />
-              </a>
-              <a
-                href=""
-                className="instagram"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="instagram"
-              >
-                <i class="fab fa-instagram" />
-              </a>
-            </div>
+          </Col>
+          <Col>
+            <Row>
+              <Link className="social_link" to="/prices">
+                Prices
+              </Link>
+            </Row>
           </Col>
           <Col>
             <Row>
               <SubscribeMail />
             </Row>
-            <Row></Row>
           </Col>
         </Row>
       </Container>
       <div className="footer_bottom">
-        <p>Copyrights © Light Sulka 2021</p>
+        <p className="footer_p">Copyrights © Light Sulka 2021</p>
+        <div className="social-networks">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://github.com/Dariwka/Light_Sulka"
+            className="github"
+            title="our github"
+          >
+            <i className="fab fa-github fa-2x" />
+          </a>
+          <a
+            href="/#"
+            className="facebook"
+            rel="noopener noreferrer"
+            target="_blank"
+            title="facebook"
+          >
+            <i className="fab fa-facebook fa-2x" />
+          </a>
+          <a
+            href="/#"
+            className="instagram"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="instagram"
+          >
+            <i className="fab fa-instagram fa-2x" />
+          </a>
+        </div>
       </div>
     </div>
   );

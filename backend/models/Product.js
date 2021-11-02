@@ -41,10 +41,22 @@ const productSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  imageUrl: {
-    type: String,
-    required: true,
-  },
+  imageUrl: [
+    {
+      id: {
+        type: Number,
+        required: true,
+      },
+      url: {
+        type: String,
+        required: true,
+      },
+      name: {
+        type: String,
+        required: true,
+      },
+    },
+  ],
   countInStock: {
     type: Number,
     required: true,

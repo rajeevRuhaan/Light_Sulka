@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 import emailjs from "emailjs-com";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+import Col from "react-bootstrap/Col";
+import "./SubscribeMail.css";
 
 class SubscribeMail extends Component {
   emailSubscriptions(e) {
@@ -24,15 +28,22 @@ class SubscribeMail extends Component {
 
   render() {
     return (
-      <form className="contact-form" onSubmit={this.emailSubscriptions}>
-        <label> Become a subscriber! </label>
-        <input
+      <Form className="contact-form" onSubmit={this.emailSubscriptions}>
+        <Form.Label className="subscribe_label">
+          {" "}
+          Become a subscriber!{" "}
+        </Form.Label>
+        <Form.Control
           type="email"
           name="email"
           placeholder="Enter your email here..."
         />
-        <input type="submit" value="Submit" />
-      </form>
+        <Col className="subscribe_col">
+          <Button variant="success" type="submit" className="subscribe_btn">
+            Subscribe
+          </Button>
+        </Col>
+      </Form>
     );
   }
 }

@@ -56,6 +56,7 @@ const CartScreen = () => {
               />
             ))
           )}
+          <hr />
         </div>
 
         <div className="cartscreen__right">

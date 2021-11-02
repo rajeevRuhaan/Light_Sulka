@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import Col from "react-bootstrap/Col";
 import CalculatorResult from "./CalculatorResult";
 
 import "./BRMcalculator.css";
@@ -54,6 +55,18 @@ const BRMcalculator = () => {
     console.log(Math.floor(bmi));
     return Math.floor(bmi);
   };
+  // calculate required calories
+  const weightLoose = inputData.currentWeight - inputData.weight;
+  console.log(weightLoose);
+  function recCalculateCalories() {
+    if (weightLoose < 11) {
+      return Math.floor(bmrResult - bmrResult * 0.25);
+    } else if (weightLoose < 21) {
+      return Math.floor(bmrResult - bmrResult * 0.4);
+    } else {
+      return Math.floor(bmrResult - bmrResult * 0.55);
+    }
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -64,7 +77,7 @@ const BRMcalculator = () => {
 
   return (
     <div className="form-container">
-      <h1>BMR calculator </h1>
+      <h1 className="brm_title">BMR calculator </h1>
       <Form
         autoComplete="off"
         className="form-bmi"
@@ -73,7 +86,7 @@ const BRMcalculator = () => {
       >
         {["radio"].map((type) => (
           <div key={`inline-${type}`} className="mb-3">
-            <h3>Select your gender</h3>
+            <h3 className="brm_label">Select your gender</h3>
             <Form.Check
               inline
               label="Male"
@@ -96,8 +109,9 @@ const BRMcalculator = () => {
             />
           </div>
         ))}
-        <h3>What is your desire weight?</h3>
+        <h3 className="brm_label">What is your desire weight?</h3>
         <Form.Control
+          className="form-control_brm"
           type="number"
           min="40"
           name="weight"
@@ -105,8 +119,9 @@ const BRMcalculator = () => {
           placeholder="Weight in Kg"
           required
         />
-        <h3>Let's check another data?</h3>
+        <h3 className="brm_label">Let's check another data?</h3>
         <Form.Control
+          className="form-control_brm"
           type="number"
           min="20"
           max="60"
@@ -116,6 +131,7 @@ const BRMcalculator = () => {
           required
         />{" "}
         <Form.Control
+          className="form-control_brm"
           type="number"
           min="130"
           max="180"
@@ -125,6 +141,7 @@ const BRMcalculator = () => {
           required
         />
         <Form.Control
+          className="form-control_brm"
           type="number"
           min="30"
           max="100"
@@ -135,7 +152,7 @@ const BRMcalculator = () => {
         />
         {["radio"].map((type) => (
           <div key={`inline-${type}`} className="mb-3">
-            <h3>How active are you?</h3>
+            <h3 className="brm_label">How active are you?</h3>
             <Form.Check
               inline
               label="Less active"
@@ -168,15 +185,19 @@ const BRMcalculator = () => {
             />
           </div>
         ))}
-        <Button type="submit">Calculate</Button>
+        <Col className="brm_btn_col">
+          <Button className="brm_btn" variant="success" type="submit">
+            Calculate
+          </Button>
+        </Col>
       </Form>
 
       {showModel && (
         <CalculatorResult
           show={showModel}
           onClose={() => setShowModel(false)}
+          reCal={recCalculateCalories()}
           result={bmrResult}
-          input={inputData}
         />
       )}
     </div>

@@ -1,0 +1,19 @@
+.subscribe_label {
+  color: darkgreen;
+  font-style: italic;
+  font-size: 1.2rem;
+}
+
+.subscribe_col {
+  padding-top: 0.5rem;
+  padding-left: 0 !important;
+}
+
+.subscribe_btn {
+  color: white !important;
+}
+
+.subscribe_btn:hover {
+  background-color: orangered;
+  border-color: orangered;
+}

@@ -19,7 +19,7 @@
   flex: 0.3;
   background: #fff;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
-  height: fit-content;
+  min-height: 100%;
 }
 
 .cartscreen__right div {

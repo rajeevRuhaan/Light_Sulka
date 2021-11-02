@@ -13,11 +13,16 @@ const Program = ({
   productId,
 }) => {
   return (
-    <Card className="card_card" value={id}>
+    <Card className="card_card" key={id}>
       <Card.Header>
         <Card.Title className="card_title">{name}</Card.Title>
       </Card.Header>
-      <Card.Img className="pic" variant="top" src={imageUrl} alt={name} />
+      <Card.Img
+        className="pic"
+        variant="top"
+        src={imageUrl[0].url}
+        alt={name}
+      />
       <Card.Text className="centered">{calories}</Card.Text>
       <Card.Body>
         <Card.Text className="card_text">{cpfc}</Card.Text>
@@ -26,11 +31,11 @@ const Program = ({
         </footer>
       </Card.Body>
       <Card.Footer>
-        <Button variant="success" className="info__button">
-          <Link to={`/product/${productId}`} className="info__button_link">
+        <Link to={`/product/${productId}`} className="info__button_link">
+          <Button variant="success" className="info__button">
             View
-          </Link>
-        </Button>
+          </Button>
+        </Link>
       </Card.Footer>
     </Card>
   );

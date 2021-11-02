@@ -2,6 +2,8 @@ import "./ProductScreen.css";
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Button from "react-bootstrap/Button";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from "react-responsive-carousel";
 
 // Actions
 import { getProductDetails } from "../redux/actions/productActions";
@@ -45,9 +47,14 @@ const ProductScreen = ({ match, history }) => {
         <MessageBox variant="danger"> {error} </MessageBox>
       ) : (
         <>
-          <div className="productscreen__left">
+          <div className="productscreen__left" key={product._id}>
             <div className="left__image">
-              <img src={product.imageUrl} alt={product.name} />
+              <Carousel infiniteLoop autoPlay>
+                {product.imageUrl &&
+                  product.imageUrl.map((image) => (
+                    <img src={image.url} alt={image.name} />
+                  ))}
+              </Carousel>
             </div>
             <div className="left__info">
               <p className="left__name">
@@ -82,13 +89,15 @@ const ProductScreen = ({ match, history }) => {
                   ))}
               </div>
               <p>
-                {product.additionalInfo} for {active.price} €
+                <strong>{product.additionalInfo}</strong> for{" "}
+                <strong>{active.price} € </strong>
               </p>
               <p>
-                Total {active.days} days: {total} €
+                <span id="total">Total</span> <strong>{active.days}</strong>{" "}
+                days: <strong>{total} €</strong>
               </p>
               <p>
-                Qty
+                <strong>Qty</strong>
                 <select
                   value={qty}
                   onChange={(e) => setQty(Number(e.target.value))}

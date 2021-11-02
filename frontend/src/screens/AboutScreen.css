@@ -1,5 +1,11 @@
 .about_section {
-  margin: 2rem;
+  padding: 2rem;
+  min-height: 155vh;
+  background-color: #47c15a;
+}
+
+.about_section h3 {
+  color: white;
 }
 
 .social_section {
@@ -9,11 +15,14 @@
 }
 
 .social_links {
-  color: green;
+  color: white;
 }
 
 .social_links:hover {
-  color: #b2efb8;
+  color: orangered;
+}
+.dev_section ul.a {
+  list-style-type: circle;
 }
 
 .dev_img {
@@ -29,7 +38,7 @@
 }
 
 .dev_img img {
-  border: 5px solid #f8f8f8;
+  border: 3px solid #f8f8f8;
   display: block;
   width: 200px;
   height: 250px;
@@ -72,5 +81,26 @@
   }
   100% {
     transform: rotate(-10deg);
+  }
+}
+
+@media (max-width: 1024px) {
+  .about_section {
+    min-height: 145vh;
+  }
+}
+@media (max-width: 812px) {
+  .about_section {
+    min-height: 270vh;
+  }
+}
+@media (max-width: 667px) {
+  .about_section {
+    min-height: 330vh;
+  }
+}
+@media (max-width: 568px) {
+  .about_section {
+    min-height: 415vh;
   }
 }

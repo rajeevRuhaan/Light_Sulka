@@ -4,7 +4,7 @@ import "./Delivery.css";
 
 const Delivery = () => {
   return (
-    <div className="container">
+    <div className="container_delivery">
       <div className="row">
         <div className="col-md-6">
           <form action="">
@@ -92,8 +92,9 @@ const Delivery = () => {
         </div>
         <div className="col-md-6">
           <iframe
+            title="delivery"
             src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0s1a7phLN0iaD6-UE7m4qP-z21pH0eSc&q=Uusima+Finland"
-            width="550"
+            width="500"
             height="275"
             allowFullScreen
           ></iframe>

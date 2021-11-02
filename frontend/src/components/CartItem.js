@@ -5,11 +5,11 @@ const CartItem = ({ item, qtyChangeHandler, removeHandler }) => {
   return (
     <div className="cartitem">
       <div className="cartitem__image">
-        <img src={item.imageUrl} alt={item.name} />
+        <img src={item.imageUrl[0].url} alt={item.name} />
       </div>
       <Link to={`/product/${item.product}`} className="cartItem__name">
         <p>
-          {item.name},{item.calories}
+          <strong>{item.name}</strong>, <span>{item.calories}</span>
         </p>
       </Link>
       <p className="cartitem__price">${item.total}</p>
