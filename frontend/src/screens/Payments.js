@@ -1,78 +1,116 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import InputGroup from "react-bootstrap/InputGroup";
 import PaymentPopup from "./PaymentPopup";
 import "./Payments.css";
 
-const Payment = () => {
-  const [validated, setValidated] = useState(false);
+const Payments = () => {
   const [showModel, setShowModel] = useState(false);
 
   const handleSubmit = (e) => {
-    const form = e.currentTarget;
-    if (form.checkValidity() === false) {
-      e.preventDefault();
-      e.stopPropagation();
-      setShowModel(true);
-      e.target.reset();
-    }
-
-    setValidated(true);
+    // e.preventDefault();
+    setShowModel(true);
   };
-
   return (
     <>
-      <Form noValidate validated={validated} onSubmit={handleSubmit}>
-        <Row className="mb-3">
-          <Form.Group as={Col} md="4" controlId="validationCustom01">
-            <Form.Label>First name</Form.Label>
-            <Form.Control required type="text" placeholder="First name" />
-          </Form.Group>
-          <Form.Group as={Col} md="4" controlId="validationCustom02">
-            <Form.Label>Last name</Form.Label>
-            <Form.Control required type="text" placeholder="Last name" />
-          </Form.Group>
-        </Row>
-        <Row className="mb-3">
-          <Form.Group as={Col} md="3" controlId="validationCustom03">
-            <Form.Label>Credit Card Number</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="**** **** **** 3193"
-              required
-            />
-            <Form.Control.Feedback type="invalid">
-              Must be 16 cracters
-            </Form.Control.Feedback>
-          </Form.Group>
-          <Form.Group as={Col} md="3" controlId="validationCustom04">
-            <Form.Label>CVC</Form.Label>
-            <Form.Control type="text" placeholder="CVC" required />
-            <Form.Control.Feedback type="invalid">
-              Security code.
-            </Form.Control.Feedback>
-          </Form.Group>
-        </Row>
-        <Row className="mb-3">
-          <Form.Group as={Col} md="3" controlId="validationCustom03">
-            <Form.Label>Month</Form.Label>
-            <Form.Control type="number" placeholder="Month" required />
-            <Form.Control.Feedback type="invalid">
-              month of card
-            </Form.Control.Feedback>
-          </Form.Group>
-          <Form.Group as={Col} md="3" controlId="validationCustom04">
-            <Form.Label>Year</Form.Label>
-            <Form.Control type="number" placeholder="year" required />
-            <Form.Control.Feedback type="invalid">
-              year of card.
-            </Form.Control.Feedback>
-          </Form.Group>
-        </Row>
-        <Button type="submit">Submit form</Button>
+      <Form onSubmit={handleSubmit}>
+        <div className="container_payments">
+          <div className="container">
+            <div className="row">
+              <div className="col-md-6">
+                <div className="form-check">
+                  <input
+                    name="paymentMethod"
+                    type="radio"
+                    className="form-check-input"
+                    checked
+                    required
+                  ></input>
+                  <label for="creditCard">Credit Card</label>
+                </div>
+
+                <div className="form-check">
+                  <input
+                    name="paymentMethod"
+                    type="radio"
+                    className="form-check-input"
+                    checked
+                    required
+                  ></input>
+                  <label for="debitCard">Debit Card</label>
+                </div>
+
+                <div className="form-check">
+                  <input
+                    name="paymentMethod"
+                    type="radio"
+                    className="form-check-input"
+                    checked
+                    required
+                  ></input>
+                  <label for="bankTransfer">Bank Transfer</label>
+                </div>
+                <div className="form-check">
+                  <input
+                    name="paymentMethod"
+                    type="radio"
+                    className="form-check-input"
+                    checked
+                    required
+                  ></input>
+                  <label for="paypal">PayPal</label>
+                </div>
+              </div>
+              <div className="col-md-6">
+                <form action="">
+                  <div className="row">
+                    <div className="form-group col-md-6">
+                      <input
+                        type="text"
+                        placeholder="Full Name"
+                        className="form-control"
+                        required
+                      ></input>
+                    </div>
+                    <div className="form-group col-md-6">
+                      <input
+                        type="text"
+                        placeholder="Card Number"
+                        className="form-control"
+                        required
+                      ></input>
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="form-group col-md-3">
+                      <input
+                        type="text"
+                        placeholder="Expiration"
+                        className="form-control"
+                        required
+                      ></input>
+                    </div>
+                    <div className="form-group col-md-3">
+                      <input
+                        type="text"
+                        placeholder="CVV"
+                        className="form-control"
+                        required
+                      ></input>
+                    </div>
+                  </div>
+                  <div className="form-row">
+                    <div className="form-group col-md-12 text-center">
+                      <Button type="submit" className="form-control">
+                        Pay
+                      </Button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
       </Form>
       {showModel && (
         <PaymentPopup show={showModel} onClose={() => setShowModel(false)} />
@@ -81,4 +119,4 @@ const Payment = () => {
   );
 };
 
-export default Payment;
+export default Payments;
